@@ -2,7 +2,7 @@ const express = require("express");
 
 var app = express();
 
-app.use(express.static(__dirname + "/public")); //this is middleware that connects the app.get 
+app.use(express.static(__dirname + "/public")); //this is middleware that connects the app.get
 
 app.get("/", (req, res) => {
     //res.send("<h1>Hello Express!</h1>");
@@ -33,5 +33,5 @@ app.get("/bad", (req, res) => {
 });
 
 app.listen(3000, process.env.IP, () => {
-    console.log("Server is running");
+    console.log("Server is up on Port 3000.");
 });
