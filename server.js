@@ -3,6 +3,7 @@ const express = require("express"),
 
 var app = express();
 
+hbs.registerPartials(__dirname + "/views/partials"); //this allows hbs to use partials
 app.set("view engine", "hbs");
 app.use(express.static(__dirname + "/public")); //this is middleware that connects the app.get
 
