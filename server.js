@@ -1,7 +1,9 @@
-const express = require("express");
+const express = require("express"),
+      hbs     = require("hbs");
 
 var app = express();
 
+app.set("view engine", "hbs");
 app.use(express.static(__dirname + "/public")); //this is middleware that connects the app.get
 
 app.get("/", (req, res) => {
