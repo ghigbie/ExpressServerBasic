@@ -7,17 +7,22 @@ app.set("view engine", "hbs");
 app.use(express.static(__dirname + "/public")); //this is middleware that connects the app.get
 
 app.get("/", (req, res) => {
-    //res.send("<h1>Hello Express!</h1>");
-    res.send({
-        name: "George",
-        likes: [
-            "Running",
-            "Biking",
-            "Greek Food",
-            "New Places",
-            "Weight Training"
-        ]
+    res.render("home.hbs", {
+        pageTitle: "Welcome Page",
+        welcomeMessage: "This is the welcome page! Welcome!",
+        currentYear: new Date().getFullYear();
     });
+    //res.send("<h1>Hello Express!</h1>");
+    // res.send({
+    //     name: "George",
+    //     likes: [
+    //         "Running",
+    //         "Biking",
+    //         "Greek Food",
+    //         "New Places",
+    //         "Weight Training"
+    //     ]
+    // });
 });
 
 app.get("/about", (req, res) => {
