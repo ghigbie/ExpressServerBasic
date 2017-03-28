@@ -24,7 +24,7 @@ app.get("/moreinfo",  (req, res) => {
     res.send("<h1>There's a lot more information on this page</h1>");
 });
 
-app.get("/bad" (req, res) => {
+app.get("/bad", (req, res) => {
     res.send({
         error: "There was an error requesting this page"
     });
