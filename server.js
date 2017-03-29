@@ -43,17 +43,6 @@ app.get("/", (req, res) => {
         pageTitle: "Welcome Page",
         welcomeMessage: "This is the welcome page! Welcome!"
     });
-    //res.send("<h1>Hello Express!</h1>");
-    // res.send({
-    //     name: "George",
-    //     likes: [
-    //         "Running",
-    //         "Biking",
-    //         "Greek Food",
-    //         "New Places",
-    //         "Weight Training"
-    //     ]
-    // });
 });
 
 app.get("/about", (req, res) => {
@@ -71,14 +60,6 @@ app.get("/bad", (req, res) => {
         error: "There was an error requesting this page"
     });
 });
-
-// app.get("/maintenance", (req, res) =>{
-//     res.render("maintenance.hbs", {
-//         pageTitle: "Maintenance",
-//         pageMessage: "This page is underconstruction...We'll be back soon : )",
-//         pageMean: "Now go away!"
-//     });
-// });
 
 app.get("*", (req, res) => {
     res.render("notfound.hbs", {
