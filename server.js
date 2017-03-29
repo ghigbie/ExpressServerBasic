@@ -6,7 +6,6 @@ var app = express();
 
 hbs.registerPartials(__dirname + "/views/partials"); //this allows hbs to use partials
 app.set("view engine", "hbs");
-app.use(express.static(__dirname + "/public")); //this is middleware that connects the app.get
 
 app.use((req, res, next) => { //this is middleware
     var now = new Date().toString();
@@ -27,6 +26,9 @@ app.use((req, res) => {
         pageMean: "Now go away!"
     });
 });
+
+app.use(express.static(__dirname + "/public")); //this is middleware that connects the app.get
+
 
 hbs.registerHelper("getCurrentYear", () => {
     return new Date().getFullYear();
