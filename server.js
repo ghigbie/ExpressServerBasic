@@ -62,6 +62,14 @@ app.get("/bad", (req, res) => {
     });
 });
 
+app.get("/maintenance", (req, res) =>{
+    res.render("maintenance.hbs", {
+        pageTitle: "Maintenance",
+        pageMessage: "This page is underconstruction",
+        pageMean: "Now go away!"
+    });
+});
+
 app.get("*", (req, res) => {
     res.render("notfound.hbs", {
         pageTitle: "Page Not Found",
