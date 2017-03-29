@@ -63,7 +63,9 @@ app.get("/bad", (req, res) => {
 });
 
 app.get("*", (req, res) => {
-    res.render("notfound");
+    res.render("notfound", {
+        pageTitle: "Page Not Found"
+    });
 });
 
 app.listen(3000, process.env.IP, () => {
