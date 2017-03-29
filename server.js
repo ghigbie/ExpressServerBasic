@@ -63,9 +63,9 @@ app.get("/bad", (req, res) => {
 });
 
 app.get("*", (req, res) => {
-    res.render("notfound", {
+    res.render("notfound.hbs", {
         pageTitle: "Page Not Found",
-        pageQuestion: "What are you doing with your life"
+        pageQuestion: "What are you doing with your life?"
     });
 });
 
