@@ -64,7 +64,8 @@ app.get("/bad", (req, res) => {
 
 app.get("*", (req, res) => {
     res.render("notfound", {
-        pageTitle: "Page Not Found"
+        pageTitle: "Page Not Found",
+        pageQuestion: "What are you doing with your life"
     });
 });
 
