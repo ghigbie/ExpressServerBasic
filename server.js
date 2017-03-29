@@ -19,13 +19,13 @@ app.use((req, res, next) => { //this is middleware
     next();
 });
 
-app.use((req, res) => {
-    res.render("maintenance.hbs", {
-        pageTitle: "Maintenance",
-        pageMessage: "This page is underconstruction...We'll be back soon : )",
-        pageMean: "Now go away!"
-    });
-});
+// app.use((req, res) => {
+//     res.render("maintenance.hbs", {
+//         pageTitle: "Maintenance",
+//         pageMessage: "This page is underconstruction...We'll be back soon : )",
+//         pageMean: "Now go away!"
+//     });
+// });
 
 app.use(express.static(__dirname + "/public")); //this is middleware that connects the app.get
 
