@@ -62,6 +62,10 @@ app.get("/bad", (req, res) => {
     });
 });
 
+app.get("*", (req, res) => {
+    res.render("notfound");
+});
+
 app.listen(3000, process.env.IP, () => {
     console.log("Server is up on Port 3000.");
 });
