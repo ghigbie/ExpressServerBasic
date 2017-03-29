@@ -7,11 +7,14 @@ hbs.registerPartials(__dirname + "/views/partials"); //this allows hbs to use pa
 app.set("view engine", "hbs");
 app.use(express.static(__dirname + "/public")); //this is middleware that connects the app.get
 
+hbs.registerHelper("getCurrentYear", () => {
+    return new Date().getFullYear();
+});
+
 app.get("/", (req, res) => {
     res.render("home.hbs", {
         pageTitle: "Welcome Page",
-        welcomeMessage: "This is the welcome page! Welcome!",
-        currentYear: new Date().getFullYear()
+        welcomeMessage: "This is the welcome page! Welcome!"
     });
     //res.send("<h1>Hello Express!</h1>");
     // res.send({
@@ -28,8 +31,7 @@ app.get("/", (req, res) => {
 
 app.get("/about", (req, res) => {
     res.render("about.hbs", {
-        pageTitle: "About Page",
-        currentYear: new Date().getFullYear()
+        pageTitle: "About Page"
     });
 });
 
