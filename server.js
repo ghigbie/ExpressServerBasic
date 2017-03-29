@@ -1,5 +1,6 @@
 const express = require("express"),
-      hbs     = require("hbs");
+      hbs     = require("hbs"),
+      fs      = require("fs");
 
 var app = express();
 
@@ -9,7 +10,13 @@ app.use(express.static(__dirname + "/public")); //this is middleware that connec
 
 app.use((req, res, next) => { //this is middleware
     var now = new Date().toString();
-    console.log(`${now}`);
+    var log =`${now}: ${req.method} | ${req.path}`;
+    console.log(log);
+    fs.appendFile("server.log", log + "\n", (err) => {
+        if(err){
+            console.log("Unable to append to server.log");
+        }
+    });
     next();
 });
 
