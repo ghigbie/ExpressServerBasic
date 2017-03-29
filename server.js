@@ -20,6 +20,14 @@ app.use((req, res, next) => { //this is middleware
     next();
 });
 
+app.use((req, res) => {
+    res.render("maintenance.hbs", {
+        pageTitle: "Maintenance",
+        pageMessage: "This page is underconstruction...We'll be back soon : )",
+        pageMean: "Now go away!"
+    });
+});
+
 hbs.registerHelper("getCurrentYear", () => {
     return new Date().getFullYear();
 });
@@ -62,13 +70,13 @@ app.get("/bad", (req, res) => {
     });
 });
 
-app.get("/maintenance", (req, res) =>{
-    res.render("maintenance.hbs", {
-        pageTitle: "Maintenance",
-        pageMessage: "This page is underconstruction",
-        pageMean: "Now go away!"
-    });
-});
+// app.get("/maintenance", (req, res) =>{
+//     res.render("maintenance.hbs", {
+//         pageTitle: "Maintenance",
+//         pageMessage: "This page is underconstruction...We'll be back soon : )",
+//         pageMean: "Now go away!"
+//     });
+// });
 
 app.get("*", (req, res) => {
     res.render("notfound.hbs", {
